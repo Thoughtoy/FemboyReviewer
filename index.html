@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITEP 414 Quick Reviewer</title>
+    <title>ITEP 414 Quick Reviewer — Dark</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
 
@@ -16,8 +16,8 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.7;
-            color: #1a1a2e;
-            background: #f0f2f5;
+            color: #cbd5e1;
+            background: #0b1220;
             padding: 40px 20px;
             font-size: 11pt;
         }
@@ -25,10 +25,11 @@
         .document {
             max-width: 850px;
             margin: 0 auto;
-            background: #ffffff;
+            background: #111a2e;
             padding: 60px 70px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            border-radius: 8px;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            border: 1px solid #1e2b45;
         }
 
         /* Header */
@@ -36,20 +37,21 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 30px;
-            border-bottom: 3px solid #2563eb;
+            border-bottom: 3px solid #3b82f6;
         }
 
         .header h1 {
             font-size: 26pt;
             font-weight: 700;
-            color: #1e3a5f;
+            color: #f1f5f9;
             letter-spacing: -0.5px;
             margin-bottom: 8px;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
         }
 
         .header .subtitle {
             font-size: 11pt;
-            color: #64748b;
+            color: #60a5fa;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -60,12 +62,13 @@
             font-size: 14pt;
             font-weight: 700;
             color: #ffffff;
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
             padding: 10px 18px;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-top: 36px;
             margin-bottom: 16px;
             page-break-after: avoid;
+            box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
         }
 
         h2:first-of-type {
@@ -75,77 +78,81 @@
         /* Content */
         p {
             margin-bottom: 12px;
-            color: #334155;
+            color: #94a3b8;
         }
 
-        /* Key-value pairs styled as definition rows */
+        /* Key-value rows */
         .kv {
             display: flex;
             padding: 6px 12px;
             margin-bottom: 4px;
-            border-radius: 4px;
-            background: #f8fafc;
-            border-left: 3px solid #2563eb;
+            border-radius: 6px;
+            background: #182338;
+            border-left: 3px solid #3b82f6;
         }
 
         .kv strong {
-            color: #1e3a5f;
+            color: #e2e8f0;
             min-width: 180px;
             flex-shrink: 0;
         }
 
-        /* Inline emphasis */
         strong {
-            color: #1e3a5f;
+            color: #e2e8f0;
         }
 
         em {
-            color: #dc2626;
+            color: #f87171;
             font-style: normal;
             font-weight: 600;
         }
 
-        /* Code / accent styling */
+        /* Accent / code */
         .accent {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
-            color: #1e40af;
-            background: #eff6ff;
+            color: #7dd3fc;
+            background: #0f2740;
             padding: 2px 6px;
-            border-radius: 3px;
+            border-radius: 4px;
             font-size: 10pt;
+            border: 1px solid #1e3a5f;
         }
 
-        /* Memory trick callout */
+        /* Callout */
         .callout {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            background: linear-gradient(135deg, #3b2a0a 0%, #4a3510 100%);
             border-left: 4px solid #f59e0b;
             padding: 16px 20px;
-            border-radius: 0 6px 6px 0;
+            border-radius: 0 8px 8px 0;
             margin-top: 36px;
             font-size: 11pt;
+            color: #fde68a;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
         }
 
         .callout strong {
-            color: #92400e;
+            color: #fbbf24;
         }
 
         /* Footer */
         .footer {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #1e2b45;
             text-align: center;
             font-size: 9pt;
-            color: #94a3b8;
+            color: #64748b;
         }
 
         /* Print styles */
         @media print {
             body {
-                background: #fff;
+                background: #0b1220;
                 padding: 0;
                 font-size: 10pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .document {
@@ -153,6 +160,7 @@
                 padding: 30px 40px;
                 max-width: 100%;
                 border-radius: 0;
+                border: none;
             }
 
             h2 {
@@ -179,7 +187,7 @@
             <div class="subtitle">System Administration Essentials</div>
         </div>
 
-        <!-- Section 1 -->
+        <!-- 1 -->
         <h2>1. Intro to System Admin</h2>
         <p><strong>SysAd</strong> = maintains reliable systems in a multi-user/UNIX environment. <em>Not</em> a software engineer.</p>
         <div class="kv"><strong>Skills</strong> OS, troubleshooting, networking, security, scripting, problem-solving, teamwork.</div>
@@ -189,7 +197,7 @@
         <p style="margin-top:10px;"><strong>Remember:</strong> <em>"Skip breakfast and payroll, not the backup!"</em> and <em>"Monitor so you don't have to restore."</em></p>
         <p><strong>Open source perks:</strong> fix bugs early, contribute, less vendor lock-in, no license headaches.</p>
 
-        <!-- Section 2 -->
+        <!-- 2 -->
         <h2>2. Becoming Superuser</h2>
         <div class="kv"><strong>Windows</strong> Administrator. <strong>Linux/Unix</strong> root.</div>
         <div class="kv"><strong>Can do</strong> read/write/execute, install, modify, delete users and data.</div>
@@ -198,7 +206,7 @@
         <div class="kv"><strong>Best practices</strong> <span class="accent">L-D-S-R-M</span> Least privilege, Divide systems, Separate privileges, Rotate passwords, Monitor/audit.</div>
         <div class="kv"><strong>PAM</strong> Privileged Access Management — discover accounts, remove admin rights, control elevation (SUPM), secure passwords, audit sessions.</div>
 
-        <!-- Section 3 -->
+        <!-- 3 -->
         <h2>3. User Interface</h2>
         <div class="kv"><strong>UI</strong> point of human-computer interaction.</div>
         <div class="kv"><strong>2 components</strong> Presentation (computer → human) and Action (human → computer).</div>
@@ -207,7 +215,7 @@
         <div class="kv"><strong>Dialog (3 points)</strong> Meaningful communication, Minimal user action, Standard operation.</div>
         <div class="kv"><strong>Help types</strong> F1, pull-down menu, context-sensitive, icon hover, wizard, help desk, forums.</div>
 
-        <!-- Section 4 -->
+        <!-- 4 -->
         <h2>4. Unix</h2>
         <p>Portable, <strong>multitasking</strong>, <strong>multi-user</strong> OS — made by programmers for programmers.</p>
         <div class="kv"><strong>Kernel</strong> manages memory, I/O and processes.</div>
@@ -215,7 +223,7 @@
         <div class="kv"><strong>Multi-user OS functions</strong> command interpretation, peripheral, memory and process management.</div>
         <div class="kv"><strong>SysAd tasks in Unix</strong> make files available, monitor disks, backups, file security, add disks/tapes.</div>
 
-        <!-- Section 5 -->
+        <!-- 5 -->
         <h2>5. User Accounts &amp; Groups</h2>
         <div class="kv"><strong>User account</strong> one person.</div>
         <div class="kv"><strong>Group</strong> collection of accounts; permissions granted all at once.</div>
@@ -224,7 +232,7 @@
         <div class="kv"><strong>Account info</strong> profile, password, enabled, activity, visibility, group membership, email notifications, avatar, properties.</div>
         <p style="margin-top:10px;">Users can <strong>self-register</strong> (username + password + profile).</p>
 
-        <!-- Section 6 -->
+        <!-- 6 -->
         <h2>6. Essential Admin Tools <span style="font-size:10pt;opacity:0.85;">(C-P-T-D-A-T)</span></h2>
         <div class="kv"><strong>C — Communication</strong> email, Slack/Teams, Zoom</div>
         <div class="kv"><strong>P — Project mgmt</strong> Trello, Asana, Jira, Google Workspace/M365</div>
@@ -234,13 +242,13 @@
         <div class="kv"><strong>T — Training</strong> continuous learning, skill development</div>
         <p style="margin-top:10px;"><strong>Good practice</strong> = reproducible tasks, know your config, patches and services, and keep learning.</p>
 
-        <!-- Section 7 -->
+        <!-- 7 -->
         <h2>7. Startup &amp; Shutdown</h2>
         <div class="kv"><strong>Boot</strong> <span class="accent">P-B-B-K-D</span> POST → BIOS/UEFI → Boot loader → Kernel loading → Device init and user space.</div>
         <div class="kv"><strong>Shutdown</strong> <span class="accent">C-S-T-F-H</span> Close apps → Save settings → Terminate processes → File system ops → Hardware power off.</div>
         <div class="kv"><strong>Why it matters (7)</strong> integrity/stability, resource mgmt, security, updates, user experience, preventing data loss, energy efficiency.</div>
 
-        <!-- Section 8 -->
+        <!-- 8 -->
         <h2>8. TCP/IP</h2>
         <div class="kv"><strong>IP</strong> address + route (where does it go?).</div>
         <div class="kv"><strong>TCP</strong> reliable, ordered delivery (did it all arrive?).</div>
@@ -251,7 +259,7 @@
         <div class="kv"><strong>Troubleshoot</strong> basics → config → <span class="accent">ping 127.0.0.1</span> → own IP → gateway → remote → <span class="accent">nslookup</span> → <span class="accent">traceroute</span>.</div>
         <div class="kv"><strong>Network types</strong> LAN, WAN, MAN, WLAN, CAN, SAN.</div>
 
-        <!-- Section 9 -->
+        <!-- 9 -->
         <h2>9. Security</h2>
         <div class="kv"><strong>CIA triad</strong> Confidentiality (private), Integrity (accurate), Availability (accessible).</div>
         <div class="kv"><strong>Threats</strong> malware, cyber attacks, social engineering, physical threats, unauthorized access, theft/sabotage.</div>
@@ -261,7 +269,7 @@
         <div class="kv"><strong>Standards/laws</strong> ISO/IEC 27001, NIST, GDPR, HIPAA.</div>
         <div class="kv"><strong>Trends</strong> AI/ML and <strong>Zero Trust</strong> (trust no one, verify always).</div>
 
-        <!-- Section 10 -->
+        <!-- 10 -->
         <h2>10. Network Services</h2>
         <div class="kv"><strong>Core</strong> DNS, DHCP, NTP (time sync).</div>
         <div class="kv"><strong>Directory services</strong> database of users, systems and resources; hierarchy of entries with attributes (Active Directory, OpenLDAP).</div>
