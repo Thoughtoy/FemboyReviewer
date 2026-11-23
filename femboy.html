@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITEP 414 Quick Reviewer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #f0f2f5;
+            padding: 40px 20px;
+            font-size: 11pt;
+        }
+
+        .document {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 60px 70px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #2563eb;
+        }
+
+        .header h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 11pt;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Section headers */
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 10px 18px;
+            border-radius: 6px;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            page-break-after: avoid;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Content */
+        p {
+            margin-bottom: 12px;
+            color: #334155;
+        }
+
+        /* Key-value pairs styled as definition rows */
+        .kv {
+            display: flex;
+            padding: 6px 12px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            background: #f8fafc;
+            border-left: 3px solid #2563eb;
+        }
+
+        .kv strong {
+            color: #1e3a5f;
+            min-width: 180px;
+            flex-shrink: 0;
+        }
+
+        /* Inline emphasis */
+        strong {
+            color: #1e3a5f;
+        }
+
+        em {
+            color: #dc2626;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Code / accent styling */
+        .accent {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            color: #1e40af;
+            background: #eff6ff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10pt;
+        }
+
+        /* Memory trick callout */
+        .callout {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 36px;
+            font-size: 11pt;
+        }
+
+        .callout strong {
+            color: #92400e;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 9pt;
+            color: #94a3b8;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+                font-size: 10pt;
+            }
+
+            .document {
+                box-shadow: none;
+                padding: 30px 40px;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            h2 {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                page-break-after: avoid;
+            }
+
+            .callout {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .kv {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <h1>ITEP 414 Quick Reviewer</h1>
+            <div class="subtitle">System Administration Essentials</div>
+        </div>
+
+        <!-- Section 1 -->
+        <h2>1. Intro to System Admin</h2>
+        <p><strong>SysAd</strong> = maintains reliable systems in a multi-user/UNIX environment. <em>Not</em> a software engineer.</p>
+        <div class="kv"><strong>Skills</strong> OS, troubleshooting, networking, security, scripting, problem-solving, teamwork.</div>
+        <div class="kv"><strong>Tasks</strong> install, backup, configure, troubleshoot, document, educate users.</div>
+        <div class="kv"><strong>Company size</strong> 20 = does everything alone; 200 = everything + a specialty; 2000+ = very specific duties.</div>
+        <div class="kv"><strong>Related roles</strong> DBA, Network, Security, Web, Tech Support, Computer Operator.</div>
+        <p style="margin-top:10px;"><strong>Remember:</strong> <em>"Skip breakfast and payroll, not the backup!"</em> and <em>"Monitor so you don't have to restore."</em></p>
+        <p><strong>Open source perks:</strong> fix bugs early, contribute, less vendor lock-in, no license headaches.</p>
+
+        <!-- Section 2 -->
+        <h2>2. Becoming Superuser</h2>
+        <div class="kv"><strong>Windows</strong> Administrator. <strong>Linux/Unix</strong> root.</div>
+        <div class="kv"><strong>Can do</strong> read/write/execute, install, modify, delete users and data.</div>
+        <div class="kv"><strong>Account types</strong> Administrator &gt; Standard &gt; Guest.</div>
+        <div class="kv"><strong>Risks</strong> mistakes, malice, malware, backdoors, shared accounts.</div>
+        <div class="kv"><strong>Best practices</strong> <span class="accent">L-D-S-R-M</span> Least privilege, Divide systems, Separate privileges, Rotate passwords, Monitor/audit.</div>
+        <div class="kv"><strong>PAM</strong> Privileged Access Management — discover accounts, remove admin rights, control elevation (SUPM), secure passwords, audit sessions.</div>
+
+        <!-- Section 3 -->
+        <h2>3. User Interface</h2>
+        <div class="kv"><strong>UI</strong> point of human-computer interaction.</div>
+        <div class="kv"><strong>2 components</strong> Presentation (computer → human) and Action (human → computer).</div>
+        <div class="kv"><strong>6 types</strong> Natural-language, Question-and-answer, Menu, Form-fill, Command-language, GUI.</div>
+        <div class="kv"><strong>Design objectives</strong> Effectiveness, Efficiency, User consideration, Usable queries, Productivity.</div>
+        <div class="kv"><strong>Dialog (3 points)</strong> Meaningful communication, Minimal user action, Standard operation.</div>
+        <div class="kv"><strong>Help types</strong> F1, pull-down menu, context-sensitive, icon hover, wizard, help desk, forums.</div>
+
+        <!-- Section 4 -->
+        <h2>4. Unix</h2>
+        <p>Portable, <strong>multitasking</strong>, <strong>multi-user</strong> OS — made by programmers for programmers.</p>
+        <div class="kv"><strong>Kernel</strong> manages memory, I/O and processes.</div>
+        <div class="kv"><strong>Shell</strong> interpreter between user and computer; provides <strong>pipes</strong> (output of one command becomes input of another).</div>
+        <div class="kv"><strong>Multi-user OS functions</strong> command interpretation, peripheral, memory and process management.</div>
+        <div class="kv"><strong>SysAd tasks in Unix</strong> make files available, monitor disks, backups, file security, add disks/tapes.</div>
+
+        <!-- Section 5 -->
+        <h2>5. User Accounts &amp; Groups</h2>
+        <div class="kv"><strong>User account</strong> one person.</div>
+        <div class="kv"><strong>Group</strong> collection of accounts; permissions granted all at once.</div>
+        <div class="kv"><strong>Admin console</strong> add, edit, delete and disable accounts and groups.</div>
+        <div class="kv"><strong>Disable</strong> keeps the person's content. <strong>Delete</strong> removes them.</div>
+        <div class="kv"><strong>Account info</strong> profile, password, enabled, activity, visibility, group membership, email notifications, avatar, properties.</div>
+        <p style="margin-top:10px;">Users can <strong>self-register</strong> (username + password + profile).</p>
+
+        <!-- Section 6 -->
+        <h2>6. Essential Admin Tools <span style="font-size:10pt;opacity:0.85;">(C-P-T-D-A-T)</span></h2>
+        <div class="kv"><strong>C — Communication</strong> email, Slack/Teams, Zoom</div>
+        <div class="kv"><strong>P — Project mgmt</strong> Trello, Asana, Jira, Google Workspace/M365</div>
+        <div class="kv"><strong>T — Time mgmt</strong> time blocking, priorities, calendar</div>
+        <div class="kv"><strong>D — Data security</strong> cybersecurity, backup/recovery</div>
+        <div class="kv"><strong>A — Automation</strong> Zapier, Power Automate, chatbots, AI</div>
+        <div class="kv"><strong>T — Training</strong> continuous learning, skill development</div>
+        <p style="margin-top:10px;"><strong>Good practice</strong> = reproducible tasks, know your config, patches and services, and keep learning.</p>
+
+        <!-- Section 7 -->
+        <h2>7. Startup &amp; Shutdown</h2>
+        <div class="kv"><strong>Boot</strong> <span class="accent">P-B-B-K-D</span> POST → BIOS/UEFI → Boot loader → Kernel loading → Device init and user space.</div>
+        <div class="kv"><strong>Shutdown</strong> <span class="accent">C-S-T-F-H</span> Close apps → Save settings → Terminate processes → File system ops → Hardware power off.</div>
+        <div class="kv"><strong>Why it matters (7)</strong> integrity/stability, resource mgmt, security, updates, user experience, preventing data loss, energy efficiency.</div>
+
+        <!-- Section 8 -->
+        <h2>8. TCP/IP</h2>
+        <div class="kv"><strong>IP</strong> address + route (where does it go?).</div>
+        <div class="kv"><strong>TCP</strong> reliable, ordered delivery (did it all arrive?).</div>
+        <div class="kv"><strong>4 layers (top → bottom)</strong> Application (HTTP, DNS) → Transport (TCP) → Internet (IP) → Network (Ethernet/Wi-Fi).</div>
+        <div class="kv"><strong>IPv4 / IPv6</strong> 32-bit / 128-bit. <strong>IP</strong> = device, <strong>port</strong> = service.</div>
+        <div class="kv"><strong>TCP vs UDP</strong> TCP = reliable (web, email, files); UDP = fast, no acknowledgment (video, games, DNS queries).</div>
+        <div class="kv"><strong>Devices/services</strong> DNS (name → IP), DHCP (auto-assigns IP), gateway, switch (same LAN), router (between networks), firewall.</div>
+        <div class="kv"><strong>Troubleshoot</strong> basics → config → <span class="accent">ping 127.0.0.1</span> → own IP → gateway → remote → <span class="accent">nslookup</span> → <span class="accent">traceroute</span>.</div>
+        <div class="kv"><strong>Network types</strong> LAN, WAN, MAN, WLAN, CAN, SAN.</div>
+
+        <!-- Section 9 -->
+        <h2>9. Security</h2>
+        <div class="kv"><strong>CIA triad</strong> Confidentiality (private), Integrity (accurate), Availability (accessible).</div>
+        <div class="kv"><strong>Threats</strong> malware, cyber attacks, social engineering, physical threats, unauthorized access, theft/sabotage.</div>
+        <div class="kv"><strong>Measures</strong> authentication (who are you?) and authorization (what can you do?), encryption, firewall/IDS, policies.</div>
+        <div class="kv"><strong>Network</strong> segmentation, least privilege, redundancy. <strong>Endpoint</strong> antivirus, EDR, mobile security.</div>
+        <div class="kv"><strong>Cloud</strong> IaaS, PaaS, SaaS. <strong>Shared responsibility</strong> provider secures infrastructure; you secure data and configs.</div>
+        <div class="kv"><strong>Standards/laws</strong> ISO/IEC 27001, NIST, GDPR, HIPAA.</div>
+        <div class="kv"><strong>Trends</strong> AI/ML and <strong>Zero Trust</strong> (trust no one, verify always).</div>
+
+        <!-- Section 10 -->
+        <h2>10. Network Services</h2>
+        <div class="kv"><strong>Core</strong> DNS, DHCP, NTP (time sync).</div>
+        <div class="kv"><strong>Directory services</strong> database of users, systems and resources; hierarchy of entries with attributes (Active Directory, OpenLDAP).</div>
+        <div class="kv"><strong>File and print</strong> file transfer protocols, print job management.</div>
+        <div class="kv"><strong>Email</strong> <span class="accent">SMTP</span> = Send; <span class="accent">POP</span> = Pull down (offline); <span class="accent">IMAP</span> = syncs with the server.</div>
+        <div class="kv"><strong>Web</strong> HTTP and <strong>HTTPS</strong> (encrypted).</div>
+        <div class="kv"><strong>Remote access</strong> VPN (secure tunnel to a private network), Remote Desktop (control a computer remotely).</div>
+        <div class="kv"><strong>Security</strong> access control and encryption in transit.</div>
+
+        <!-- Callout -->
+        <div class="callout">
+            <strong>Memory trick:</strong> The whole course comes down to — <strong>Backup, Monitor, Least privilege, CIA, ping the gateway.</strong>
+        </div>
+
+        <div class="footer">
+            ITEP 414 Quick Reviewer &nbsp;•&nbsp; System Administration Essentials
+        </div>
+    </div>
+</body>
+</html>
